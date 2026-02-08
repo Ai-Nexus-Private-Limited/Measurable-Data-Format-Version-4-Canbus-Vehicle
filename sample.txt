@@ -1,0 +1,7 @@
+aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 919739341273.dkr.ecr.ap-south-1.amazonaws.com
+
+docker build -t decoder.py .
+
+docker tag decoder.py:latest 919739341273.dkr.ecr.ap-south-1.amazonaws.com/canbus-image-repository-1:latest
+
+docker push 919739341273.dkr.ecr.ap-south-1.amazonaws.com/canbus-image-repository-1:latest
